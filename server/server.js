@@ -17,17 +17,11 @@ app.use(bodyParser.json())
 // app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
-<<<<<<< HEAD
 require('dotenv').config({path: __dirname + '/.env'})
 
 
 /* Setup mongoose/mongoDB connection */ 
 mongoose.connect(process.env.URL
-=======
-
-/* Setup mongoose/mongoDB connection */ 
-mongoose.connect('mongodb+srv://ydehed:Balto123@slack-project-wdtda.gcp.mongodb.net/Slack-clone?retryWrites=true&w=majority'
->>>>>>> d2905bd25388ca4c1cd2f414c3e1db140d4ee372
 , {useUnifiedTopology: true, useNewUrlParser: true})
 .then(() => console.log('Connected to database'))
 .catch(err => console.log(`Failed to connect to database - Error: ${err.message}`));
