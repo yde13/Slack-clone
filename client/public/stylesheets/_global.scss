@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/* Global variables */ 
+$header-font: 'Montserrat', sans-serif;
+$chat-font: 'Lato', sans-serif;
+$text-font: 'Nunito', sans-serif;
+$time-font: 'Open Sans', sans-serif;
+$purple: #3f0e40;
+$green: #2BAC76;
+$white: white;
+$grey: rgb(207,195,207);
+
+*,body {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+
+%flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+%flex-center-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    font-family: $header-font;
+}
+
+button,
+input,
+p{
+    font-family: $text-font;
+}
+
+

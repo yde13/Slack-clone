@@ -1,0 +1,158 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+/* Global variables */
+*, body  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px; }
+
+h1 {
+  font-family: "Montserrat", sans-serif; }
+
+button,
+input,
+p {
+  font-family: "Nunito", sans-serif; }
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #292b2b;
+  font-size: 1.6rem;
+  background-color: #3f0e40; }
+
+.back {
+  margin-top: 30px;
+  margin-bottom: 0;
+  margin-left: 15px; }
+  .back a {
+    color: white;
+    text-decoration: none; }
+
+img {
+  height: 300px;
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 20px; }
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 5vh auto;
+  padding: 5em;
+  border-radius: 18px;
+  width: 70vw;
+  height: 70vh;
+  min-height: 600px;
+  background-color: white;
+  position: relative; }
+
+.profilePic {
+  width: 366px;
+  height: auto;
+  margin: 0 auto;
+  font-weight: bolder; }
+
+.profileInfo {
+  margin: 0 auto; }
+  .profileInfo label {
+    font-weight: bolder; }
+
+.btn {
+  background: #2BAC76;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #707070;
+  border-radius: 8px;
+  font-weight: bolder; }
+  .btn:hover {
+    cursor: pointer; }
+
+.cncel {
+  background-color: white;
+  color: darkslategray;
+  font-weight: 100; }
+
+.dlt {
+  background: transparent;
+  color: darkslategray;
+  font-weight: 100; }
+
+.updateInfo {
+  margin: 60px 0px 5px 0px; }
+  .updateInfo input {
+    margin: 5px 0px 30px 0px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 4px;
+    border: 1px solid #707070;
+    font-size: 1.6rem; }
+
+form:nth-child(2) {
+  margin-top: 30px; }
+
+@media only screen and (min-width: 500px) and (max-width: 1200px) {
+  body {
+    font-size: 1.5rem; }
+  img {
+    height: 200px;
+    width: 200px; }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    min-height: 800px; }
+  .profilePic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; }
+  .profileInfo {
+    margin: 0; }
+  .form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 2rem;
+    background-color: white; }
+  img {
+    height: 200px;
+    width: 200px; }
+  .btn {
+    font-size: 2rem; }
+  .back h1 {
+    font-size: 2.5rem; }
+  .back a {
+    color: #3f0e40; }
+  .profilePic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-top: 30px; }
+  .form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .form__container form label {
+      font-size: 1.5rem; }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+  .profileInfo {
+    margin: 0; }
+    .profileInfo input {
+      padding: 5px;
+      width: 100%;
+      font-size: 1.5rem; } }

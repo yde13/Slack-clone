@@ -1,0 +1,173 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+/* Global variables */
+*, body  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px; }
+
+.wrapper .left__column, .wrapper .left__column form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+h1 {
+  font-family: "Montserrat", sans-serif; }
+
+button,
+input,
+p {
+  font-family: "Nunito", sans-serif; }
+
+.fontAwesome {
+  font-family: 'Helvetica', FontAwesome, sans-serif; }
+
+.wrapper {
+  height: 100vh;
+  background: #dbdbdbdb;
+  display: flex; }
+  .wrapper .left__column {
+    padding: 5%;
+    width: 40%;
+    height: 100vh; }
+    .wrapper .left__column .header__h1 {
+      font-size: 3.6rem; }
+    .wrapper .left__column .header__p {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      line-height: 2rem; }
+    .wrapper .left__column .button__container {
+      margin-top: 20px;
+      display: flex; }
+      .wrapper .left__column .button__container .register,
+      .wrapper .left__column .button__container .login {
+        width: 90px;
+        height: 30px;
+        font-size: 1.8rem;
+        font-family: "Montserrat", sans-serif;
+        background: transparent;
+        text-align: left;
+        border: none;
+        outline: none;
+        cursor: pointer; }
+        .wrapper .left__column .button__container .register.active,
+        .wrapper .left__column .button__container .login.active {
+          border-bottom: 2.5px solid #F8B854; }
+        .wrapper .left__column .button__container .register:last-child,
+        .wrapper .left__column .button__container .login:last-child {
+          margin-left: 20px; }
+      .wrapper .left__column .button__container .login {
+        width: 70px; }
+    .wrapper .left__column form {
+      margin-top: 20px; }
+      .wrapper .left__column form input {
+        margin-top: 10px;
+        width: 100%;
+        height: 50px;
+        padding-left: 5px;
+        font-size: 1.3rem;
+        border-radius: 5px;
+        border-color: transparent; }
+      .wrapper .left__column form button {
+        margin-top: 30px;
+        margin-bottom: 5px;
+        width: 100%;
+        height: 50px;
+        background: #3f0e40;
+        border-color: #3f0e40;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px; }
+      .wrapper .left__column form p {
+        width: 100%;
+        font-size: 1.3rem; }
+        .wrapper .left__column form p a {
+          color: #F8B854;
+          font-family: "Montserrat", sans-serif;
+          cursor: pointer;
+          font-size: 1.3rem; }
+      .wrapper .left__column form .login__p,
+      .wrapper .left__column form .register__p {
+        text-align: center; }
+      .wrapper .left__column form .forgot__p,
+      .wrapper .left__column form .account__p {
+        margin-top: 5px;
+        text-align: right;
+        font-size: 1.1rem; }
+        .wrapper .left__column form .forgot__p a,
+        .wrapper .left__column form .account__p a {
+          font-size: 1.1rem; }
+      .wrapper .left__column form #login__error,
+      .wrapper .left__column form #register__error {
+        margin-top: -15px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400 !important;
+        color: red;
+        font-size: 1.4rem; }
+      .wrapper .left__column form #login__success {
+        color: green;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.4rem; }
+    .wrapper .left__column #register__form {
+      display: none; }
+  .wrapper .right__column {
+    width: 60%;
+    background: url("../images/background.svg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh; }
+
+@media screen and (min-width: 1000px) and (max-width: 1440px) {
+  .wrapper .left__column {
+    width: 50%; }
+  .wrapper .right__column {
+    width: 50%; } }
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    background: url("../images/background.svg") no-repeat;
+    background-size: contain;
+    background-position: center; }
+    .wrapper .left__column {
+      justify-content: center;
+      background: #dbdbdbdb;
+      width: 100%;
+      padding: 5% 10%;
+      z-index: 100; }
+    .wrapper .right__column {
+      display: none; } }
+
+@media screen and (max-width: 769px) {
+  .wrapper .left__column {
+    padding: 10%; }
+  .wrapper .right__column {
+    display: none; } }
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 9px; }
+  .wrapper .left__column {
+    padding: 5%; }
+    .wrapper .left__column .header__h1 {
+      font-size: 3rem; }
+    .wrapper .left__column form {
+      margin-top: 10px; }
+      .wrapper .left__column form #login__error,
+      .wrapper .left__column form #register__error {
+        margin-top: -11px;
+        color: red;
+        font-size: 1rem; }
+      .wrapper .left__column form #login__success {
+        color: green;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem; }
+  .wrapper .right__column {
+    display: none; } }
