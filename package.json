@@ -14,7 +14,10 @@
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "dotenv": "^8.2.0",
+=======
+>>>>>>> d2905bd25388ca4c1cd2f414c3e1db140d4ee372
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.0",
