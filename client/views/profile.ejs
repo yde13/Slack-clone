@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+<body>
+    <div class="back">
+        <h1><a href="/chat">← Back to chat</a></h1>
+    </div>
+    <div class="container">
+        <div class="profilePic">
+            <p>Profile photo <%= msg %></p>
+            <img src="<%= typeof file != 'undefined' ? file : defaultPicture %>">
+            <div class = "form__container">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <label for="btn" class="btn pic">Upload an image </label>
+                    <input id="btn" name="profilePicture" type="file" onchange="this.form.submit()" accept="image/png, image/jpeg" style="display: none;">
+                </form>
+                <form action="/delete" method="POST" enctype="multipart/form-data">
+                    <label for="up" class="btn dlt">Delete image </label>
+                    <input id="up" type="submit" onchange="this.form.submit()" class="btn" style="display:none">
+                </form>
+            </div>
+        </div>
+        <div class="profileInfo">
+                <form action="/savedChanges" method="POST">
+                    <div class="updateInfo">
+                        <div>
+                            <label for="name">Full name</label><br>
+                            <input name="name" type="name" value="<%= name %>">
+                        </div>
+                        <div>
+                            <label for="email">Email</label><br>
+                            <input name="email" type="email" value="<%= email %>">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="info" class="btn update">Save changes</label>
+                        <input id="info" type="submit" onchange="this.form.submit()" class="btn" style="visibility: hidden;">
+                    </div>
+                </form>
+        </div>
+    </div>
+    
+</body>
+</html>

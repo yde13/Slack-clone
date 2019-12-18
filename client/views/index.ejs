@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <section class = "wrapper">
+        <div class = "left__column">
+          <h1 class = "header__h1">Login to Instado</h1>
+          <p class = "header__p">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <div class = "button__container">
+            <a class = "login active">Login</a>
+            <a class = "register">Register</a>
+          </div>
+          <form id = "login__form" action = "/login" method = "POST">
+            <input id = "login__username" class = "fontAwesome" name = "username" placeholder="&#xf007; Username">
+            <input type = "password" id = "login__password" class = "fontAwesome" name = "password" placeholder="&#xf023; Password">
+            <p class = "forgot__p">Forgot password? <a>Click here</a></p>
+            <p id = "login__error"><%= error %></p>
+            <p id = "login__success"><%= success %></p>
+            <button type = "submit" class = "login__btn">Login</button>
+            <p class = "login__p">Don't have an account? <a class = "register">Sign up</a></p>
+          </form>
+          <form id = "register__form" action = "/register" method = "POST">
+            <input class = "fontAwesome" name = "name" placeholder="&#xf007; Full name">
+            <input class = "fontAwesome"  name = "username" placeholder="&#xf2bc; Username">
+            <input class = "fontAwesome" name = "email" placeholder="&#xf0e0; Email">
+            <input type = "password" class = "fontAwesome" name = "password" placeholder="&#xf023; Password"> 
+            <p class = "account__p">Already have an account? <a class = "login">Log In</a></p>
+            <p id = "register__error"><%= error %></p>
+            <button class = "register__btn">Register</button>
+            <p class = "register__p">By signing up, you agree to our <a>Terms & Conditions</a></p>
+          </form>
+
+
+        </div>
+        <div class = "right__column">
+
+        </div>
+    </section>
+
+    <script src = "/javascript/index.js"></script>
+    <!-- <script src = "/javascript/register.js"></script> -->
+    <!-- <script src = "/javascript/login.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "slack-clone",
+  "version": "0.0.0",
+  "description": "Slack clone - Group project in Backend 1",
+  "authors": "Andreas Gunnahr, Elin Södermark, Philip Lagergren Ydehed",
+  "private": true,
+  "scripts": {
+    "client": "nodemon ./client/app.js",
+    "server": "nodemon ./server/server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.7.13",
+    "mongoose-unique-validator": "^2.0.3",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.0",
+    "node-sass": "^4.13.0",
+    "node-sass-middleware": "^0.11.0",
+    "nodemon": "^2.0.1",
+    "socket.io": "^2.3.0"
+  }
+}

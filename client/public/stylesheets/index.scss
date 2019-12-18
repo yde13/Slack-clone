@@ -1,0 +1,206 @@
+@import './global';
+
+.fontAwesome {
+  font-family: 'Helvetica', FontAwesome, sans-serif;
+}
+
+
+.wrapper{
+  height: 100vh;
+  background: #dbdbdbdb;
+  display: flex;
+
+  .left__column{
+    padding: 5%;
+    @extend %flex-center-column;
+    width: 40%;
+    height: 100vh;
+    .header__h1{
+      font-size: 3.6rem;
+    }
+
+    .header__p{
+      margin-top: 20px;
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+
+    .button__container{
+      margin-top: 20px;
+      display: flex;
+      .register,
+      .login{
+        width: 90px;
+        height: 30px;
+        font-size: 1.8rem;
+        font-family: $header-font;
+        background: transparent;
+        text-align: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &.active{
+          border-bottom: 2.5px solid #F8B854;
+        }
+        &:last-child{
+          margin-left: 20px;
+        }
+      }
+      .login{
+        width: 70px;
+      }
+    }
+
+    form{
+      @extend %flex-center-column;
+      margin-top: 20px;
+      input{
+        margin-top: 10px;
+        width: 100%;
+        height: 50px;
+        padding-left: 5px;
+        font-size: 1.3rem;
+        border-radius: 5px;
+        border-color: transparent;
+      }
+      button{
+        margin-top: 30px;
+        margin-bottom: 5px;
+        width: 100%;
+        height: 50px;
+        background: $purple;
+        border-color: $purple;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      p{
+        width: 100%;
+        font-size: 1.3rem;
+        a{
+          color: #F8B854;
+          font-family: $header-font;
+          cursor: pointer;
+          font-size: 1.3rem;
+        }
+      }
+      .login__p,
+      .register__p{
+        text-align: center;
+      }
+      .forgot__p,
+      .account__p{
+        margin-top: 5px;
+        text-align: right;
+        font-size: 1.1rem;
+        a{
+          font-size: 1.1rem;
+        }
+      }
+      #login__error,
+      #register__error{
+        margin-top: -15px;
+        font-family: $header-font;
+        font-weight: 400 !important;
+        color: red;
+        font-size: 1.4rem;
+      }
+      #login__success{
+        color: green;
+        font-family: $header-font;
+        font-size: 1.4rem;
+      }
+    }
+    #register__form{
+      display: none;
+    }
+    
+  }
+  .right__column{
+    width: 60%;
+    background: url("../images/background.svg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;  
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1440px) {
+  .wrapper{
+    .left__column{
+      width: 50%;
+    }
+    
+    .right__column{
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper{
+    background: url("../images/background.svg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    .left__column{
+      justify-content: center;
+      background: #dbdbdbdb;
+      width: 100%;
+      padding: 5% 10%;
+      z-index: 100;
+    }
+    
+    .right__column{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .wrapper{
+    .left__column{
+      padding: 10%;
+    }
+    
+    .right__column{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html{
+    font-size: 9px;
+  }
+  .wrapper{
+    .left__column{
+      padding: 5%;
+      .header__h1{
+        font-size: 3rem;
+      }
+      form{
+        margin-top: 10px;
+        #login__error,
+        #register__error{
+          margin-top: -11px;
+          color: red;
+          font-size: 1rem;
+        }
+        #login__success{
+          color: green;
+          font-family: $header-font;
+          font-size: 1rem;
+        }
+      }
+    }
+    
+    .right__column{
+      display: none;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,546 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+/* Global variables */
+*, body  {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px; }
+
+.grid-container .sidebar {
+  display: flex;
+  flex-direction: column; }
+
+h1 {
+  font-family: "Montserrat", sans-serif; }
+
+button,
+input,
+p {
+  font-family: "Nunito", sans-serif; }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  position: relative; }
+
+.overlay {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2; }
+
+#showMembers__container,
+#editMessage__container,
+#showChannels__container,
+#createChannel__container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 30;
+  width: 100%;
+  max-width: 520px; }
+  #showMembers__container .fa-times,
+  #editMessage__container .fa-times,
+  #showChannels__container .fa-times,
+  #createChannel__container .fa-times {
+    float: right;
+    font-size: 2.5rem;
+    color: #cfc3cf; }
+    #showMembers__container .fa-times:hover,
+    #editMessage__container .fa-times:hover,
+    #showChannels__container .fa-times:hover,
+    #createChannel__container .fa-times:hover {
+      cursor: pointer; }
+  #showMembers__container h1,
+  #editMessage__container h1,
+  #showChannels__container h1,
+  #createChannel__container h1 {
+    font-size: 2.5rem; }
+  #showMembers__container p,
+  #editMessage__container p,
+  #showChannels__container p,
+  #createChannel__container p {
+    margin-top: 10px; }
+
+#editMessage__container input {
+  max-width: 420px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #cfc3cf;
+  border-radius: 5px;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem; }
+
+#editMessage__container .button__container {
+  display: flex;
+  margin-top: 20px; }
+  #editMessage__container .button__container button {
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem; }
+    #editMessage__container .button__container button i {
+      font-size: 1.8rem;
+      margin-right: 10px; }
+    #editMessage__container .button__container button i.fa-rotate-45 {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg); }
+    #editMessage__container .button__container button:nth-child(2) {
+      margin-left: 10px;
+      background: #2BAC76;
+      border-color: #2BAC76;
+      color: white; }
+
+#showMembers__container h1 i {
+  padding-right: 7.5px; }
+
+#showMembers__container .inner__container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px; }
+  #showMembers__container .inner__container h1 {
+    display: flex;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    font-size: 1.8rem; }
+    #showMembers__container .inner__container h1:before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      -moz-border-radius: 7.5px;
+      -webkit-border-radius: 7.5px;
+      border-radius: 7.5px;
+      background-color: #2BAC76;
+      margin-right: 5px; }
+
+#showChannels__container .inner__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  #showChannels__container .inner__container table {
+    width: 100%;
+    max-width: 620px;
+    margin-top: 20px;
+    border-spacing: 0; }
+    #showChannels__container .inner__container table thead tr td {
+      height: 20px;
+      font-family: "Lato", sans-serif;
+      font-size: 1.4rem;
+      text-align: left; }
+    #showChannels__container .inner__container table tbody {
+      display: flex;
+      flex-direction: column;
+      height: 350px;
+      overflow-y: scroll; }
+      #showChannels__container .inner__container table tbody tr {
+        border-bottom: 1px solid #cfc3cf; }
+        #showChannels__container .inner__container table tbody tr td {
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          #showChannels__container .inner__container table tbody tr td .channels {
+            font-size: 1.6rem;
+            text-transform: capitalize;
+            text-decoration: none;
+            color: black; }
+        #showChannels__container .inner__container table tbody tr input {
+          height: 30px;
+          width: 80px;
+          border: none;
+          border-radius: 5px;
+          background: #3f0e40;
+          font-family: "Lato", sans-serif;
+          color: white; }
+          #showChannels__container .inner__container table tbody tr input:hover {
+            cursor: pointer; }
+
+#createChannel__container .createChannel__form {
+  display: flex;
+  flex-direction: column; }
+  #createChannel__container .createChannel__form .createChannel__input {
+    height: 40px;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid grey; }
+    #createChannel__container .createChannel__form .createChannel__input::placeholder {
+      font-size: 1.4rem;
+      padding-left: 10px; }
+  #createChannel__container .createChannel__form label {
+    margin-top: 20px;
+    font-size: 1.6rem; }
+    #createChannel__container .createChannel__form label:first-child {
+      margin-top: 10px; }
+  #createChannel__container .createChannel__form span {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #cfc3cf; }
+  #createChannel__container .createChannel__form #createChannel__error {
+    font-size: 1.6rem;
+    color: red; }
+  #createChannel__container .createChannel__form #createChannel__success {
+    font-size: 1.6rem;
+    color: green; }
+  #createChannel__container .createChannel__form .createButton__container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; }
+    #createChannel__container .createChannel__form .createButton__container #createChannelBtn {
+      width: 100px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid #cfc3cf;
+      margin-top: 10px;
+      background: #cfc3cf;
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem; }
+      #createChannel__container .createChannel__form .createButton__container #createChannelBtn:hover {
+        cursor: pointer; }
+
+#createDirectMessage__container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 30;
+  width: 100%;
+  max-width: 920px; }
+  #createDirectMessage__container .fa-times {
+    float: right;
+    font-size: 2.5rem;
+    color: #cfc3cf; }
+    #createDirectMessage__container .fa-times:hover {
+      cursor: pointer; }
+  #createDirectMessage__container .inner__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #createDirectMessage__container .inner__container h1 {
+      font-size: 2.5rem; }
+    #createDirectMessage__container .inner__container .createDirectMessage__form {
+      width: 100%;
+      max-width: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-top: 10px; }
+      #createDirectMessage__container .inner__container .createDirectMessage__form .createDirectMessage__input {
+        height: 50px;
+        max-width: 620px;
+        width: 100%;
+        font-size: 1.6rem;
+        padding-left: 5px;
+        border-radius: 5px;
+        margin-top: 10px;
+        border: 1px solid grey; }
+        #createDirectMessage__container .inner__container .createDirectMessage__form .createDirectMessage__input::placeholder {
+          font-size: 1.4rem;
+          padding-left: 10px; }
+    #createDirectMessage__container .inner__container #createDirectMessage__error {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      color: red; }
+    #createDirectMessage__container .inner__container table {
+      width: 100%;
+      max-width: 620px;
+      margin-top: 20px;
+      border-spacing: 0; }
+      #createDirectMessage__container .inner__container table thead tr td {
+        height: 20px;
+        font-family: "Lato", sans-serif;
+        font-size: 1.4rem;
+        text-align: left; }
+      #createDirectMessage__container .inner__container table tbody {
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        overflow-y: scroll; }
+        #createDirectMessage__container .inner__container table tbody tr {
+          border-bottom: 1px solid #cfc3cf; }
+          #createDirectMessage__container .inner__container table tbody tr td {
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; }
+            #createDirectMessage__container .inner__container table tbody tr td .directMessage {
+              font-size: 1.6rem;
+              text-transform: capitalize;
+              text-decoration: none;
+              color: black; }
+              #createDirectMessage__container .inner__container table tbody tr td .directMessage:before {
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                -moz-border-radius: 7.5px;
+                -webkit-border-radius: 7.5px;
+                border-radius: 7.5px;
+                background-color: #2BAC76;
+                margin-right: 5px; }
+            #createDirectMessage__container .inner__container table tbody tr td .directMessage__time {
+              font-size: 1.2rem;
+              color: #cfc3cf; }
+          #createDirectMessage__container .inner__container table tbody tr:hover {
+            background: lightgrey;
+            cursor: pointer; }
+
+.grid-container {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: 220px 1fr; }
+  .grid-container .header {
+    grid-row: 1;
+    grid-column: 2;
+    background: white;
+    border: 1px grey;
+    border-style: hidden hidden solid hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .grid-container .header .header__container {
+      padding-left: 20px; }
+      .grid-container .header .header__container #header__name {
+        font-size: 2rem;
+        font-family: "Montserrat", sans-serif; }
+      .grid-container .header .header__container .icon__container {
+        margin-top: 5px; }
+        .grid-container .header .header__container .icon__container a {
+          font-size: 1.5rem;
+          font-family: "Lato", sans-serif;
+          color: #cfc3cf; }
+          .grid-container .header .header__container .icon__container a i {
+            padding: 0 5px 0 5px; }
+          .grid-container .header .header__container .icon__container a:after {
+            content: '|';
+            color: #cfc3cf;
+            padding-left: 5px; }
+          .grid-container .header .header__container .icon__container a:hover {
+            cursor: pointer; }
+  .grid-container .sidebar {
+    grid-row: 1/11;
+    grid-column: 1;
+    background: #3f0e40; }
+    .grid-container .sidebar .profileLink {
+      margin-top: 10px;
+      margin-left: 10px;
+      display: flex;
+      align-items: center; }
+      .grid-container .sidebar .profileLink a {
+        padding: 10px;
+        color: #cfc3cf;
+        font-size: 1.5rem; }
+      .grid-container .sidebar .profileLink #profile__picture {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%; }
+    .grid-container .sidebar .top__container {
+      padding: 10px; }
+      .grid-container .sidebar .top__container #group__name {
+        color: white; }
+      .grid-container .sidebar .top__container h2 {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: white; }
+        .grid-container .sidebar .top__container h2:before {
+          content: '';
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          -moz-border-radius: 7.5px;
+          -webkit-border-radius: 7.5px;
+          border-radius: 7.5px;
+          background-color: #2BAC76;
+          margin-right: 5px; }
+    .grid-container .sidebar .setting__container {
+      width: 100%;
+      padding: 10px 0 10px 0;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 10px; }
+      .grid-container .sidebar .setting__container #joinChannelBtn {
+        display: flex;
+        padding: 7.5px;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        border: 1px solid white;
+        border-radius: 5px; }
+        .grid-container .sidebar .setting__container #joinChannelBtn i {
+          padding-right: 5px;
+          font-size: 1.6rem; }
+        .grid-container .sidebar .setting__container #joinChannelBtn:hover {
+          cursor: pointer; }
+    .grid-container .sidebar .middle__container {
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      color: #cfc3cf; }
+      .grid-container .sidebar .middle__container .channel__header,
+      .grid-container .sidebar .middle__container .directMessage__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px 0px 10px;
+        margin: 10px 0 5px 0; }
+        .grid-container .sidebar .middle__container .channel__header h1,
+        .grid-container .sidebar .middle__container .directMessage__header h1 {
+          font-size: 1.6rem;
+          font-weight: 700; }
+        .grid-container .sidebar .middle__container .channel__header .fa-plus-circle,
+        .grid-container .sidebar .middle__container .directMessage__header .fa-plus-circle {
+          font-size: 1.6rem;
+          cursor: pointer;
+          color: white;
+          text-decoration: none; }
+      .grid-container .sidebar .middle__container .channels__container,
+      .grid-container .sidebar .middle__container .directMessage__container {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+        font-weight: 300; }
+        .grid-container .sidebar .middle__container .channels__container .channel,
+        .grid-container .sidebar .middle__container .channels__container .createdDirectMessage,
+        .grid-container .sidebar .middle__container .directMessage__container .channel,
+        .grid-container .sidebar .middle__container .directMessage__container .createdDirectMessage {
+          padding: 5px 0px 5px 10px;
+          width: 100%;
+          text-decoration: none;
+          color: white;
+          text-transform: capitalize; }
+          .grid-container .sidebar .middle__container .channels__container .channel .fa-hashtag,
+          .grid-container .sidebar .middle__container .channels__container .createdDirectMessage .fa-hashtag,
+          .grid-container .sidebar .middle__container .directMessage__container .channel .fa-hashtag,
+          .grid-container .sidebar .middle__container .directMessage__container .createdDirectMessage .fa-hashtag {
+            margin-right: 2.5px; }
+          .grid-container .sidebar .middle__container .channels__container .channel:hover,
+          .grid-container .sidebar .middle__container .channels__container .createdDirectMessage:hover,
+          .grid-container .sidebar .middle__container .directMessage__container .channel:hover,
+          .grid-container .sidebar .middle__container .directMessage__container .createdDirectMessage:hover {
+            cursor: pointer; }
+          .grid-container .sidebar .middle__container .channels__container .channel.active,
+          .grid-container .sidebar .middle__container .channels__container .createdDirectMessage.active,
+          .grid-container .sidebar .middle__container .directMessage__container .channel.active,
+          .grid-container .sidebar .middle__container .directMessage__container .createdDirectMessage.active {
+            background: rgba(0, 0, 0, 0.2); }
+        .grid-container .sidebar .middle__container .channels__container .createdDirectMessage:before,
+        .grid-container .sidebar .middle__container .directMessage__container .createdDirectMessage:before {
+          content: '';
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          -moz-border-radius: 7.5px;
+          -webkit-border-radius: 7.5px;
+          border-radius: 7.5px;
+          background-color: #2BAC76;
+          margin-right: 5px; }
+        .grid-container .sidebar .middle__container .channels__container .createdDirectMessage:hover,
+        .grid-container .sidebar .middle__container .directMessage__container .createdDirectMessage:hover {
+          cursor: pointer; }
+  .grid-container .text {
+    grid-row: 2/10;
+    grid-column: 2;
+    background: white;
+    overflow-y: scroll;
+    margin: 10px 15px 10px 15px;
+    font-size: 1.4rem; }
+    .grid-container .text #messages {
+      padding: 0px; }
+      .grid-container .text #messages .text-container {
+        padding: 5px; }
+        .grid-container .text #messages .text-container .title {
+          display: flex;
+          justify-content: space-between; }
+          .grid-container .text #messages .text-container .title .chat-name {
+            font-size: 1.5rem;
+            font-family: "Montserrat", sans-serif;
+            text-transform: capitalize; }
+            .grid-container .text #messages .text-container .title .chat-name .chat-time {
+              color: #cfc3cf;
+              font-size: 1.3rem;
+              font-family: "Open Sans", sans-serif;
+              margin-left: 0.4rem; }
+          .grid-container .text #messages .text-container .title .icon-container {
+            margin-top: -5px;
+            display: flex;
+            align-items: center;
+            margin-right: 20px; }
+            .grid-container .text #messages .text-container .title .icon-container a {
+              font-size: 1.5rem;
+              border: 1px solid #cfc3cf;
+              padding: 5px 10px 5px 10px; }
+              .grid-container .text #messages .text-container .title .icon-container a:hover {
+                cursor: pointer; }
+        .grid-container .text #messages .text-container .chat-message {
+          font-size: 1.5rem;
+          font-family: "Lato", sans-serif; }
+          .grid-container .text #messages .text-container .chat-message::first-letter {
+            text-transform: capitalize; }
+        .grid-container .text #messages .text-container:hover {
+          background-color: #f8f8f8; }
+  .grid-container #send {
+    grid-row: 10/11;
+    grid-column: 2;
+    background: white;
+    bottom: 0;
+    position: sticky;
+    text-align: center; }
+    .grid-container #send .typing__container {
+      height: 20px; }
+      .grid-container #send .typing__container #isTyping {
+        font-size: 1.4rem;
+        font-family: "Lato", sans-serif;
+        margin-bottom: 10px; }
+    .grid-container #send input {
+      margin-bottom: 20px;
+      height: 60px;
+      width: 95%;
+      padding: 15px;
+      border: 1px solid #444444;
+      border-radius: 5px;
+      font-family: "Nunito", sans-serif;
+      font-size: 1.4rem; }
+    .grid-container #send button {
+      display: none;
+      margin-top: 20px;
+      height: 1px;
+      width: 1px;
+      border: 1px solid gray;
+      border-radius: 10px; }
